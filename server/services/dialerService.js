@@ -17,9 +17,8 @@ const service = {
       phone: phoneNumber,
       webhookURL: WEBHOOK_URL,
     }).then(response => {
-      // TODO: REMOVE BELOW
-      console.log(response);
-      res.status(200).send();
+      // console.log(response); // this is no longer middleware
+      // res.status(200).send();
     });
   },
 };
