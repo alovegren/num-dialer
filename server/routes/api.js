@@ -1,9 +1,9 @@
 import express from 'express';
 const router = express.Router();
 
-import dialerService from '../controllers/dialerService.js';
+import callsController from '../controllers/callsService.js';
 
-router.post('/calls', dialerService.dial);
-router.post('/callStatuses', dialerService.updateCallStatus);
+router.post('/calls', callsController.initCalls);
+router.post('/callStatuses', callsController.updateCallStatus);
 
 export default router;
