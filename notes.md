@@ -10,7 +10,7 @@ Implement a full stack application with one feature: the application frontend di
 
 ## Backend
 ### Our backend API endpoints to expose 
-- An endpoint to set off the dialing of numbers (idk POST /calls??)
+- **POST /calls** An endpoint to set off the dialing of numbers
   - Sends a request to the LS API
   - Provide JSON body: e.g. { 
     phone: "13018040009",
@@ -41,8 +41,10 @@ src
 controllers
   - external API related logic.js
   - all other logic.js
-index.js <---- set up Express, expose our backend API endpoints, use
-               middlewares a la Trello
+routes
+  - api.js <--- expose our backend API endpoints, use
+                middlewares a la Trello
+index.js <---- set up Express
 
 
 
