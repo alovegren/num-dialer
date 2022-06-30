@@ -31,7 +31,11 @@ Implement a full stack application with one feature: the application frontend di
 
 ## File Structure
 ### Frontend
-*insert react app here*
+src
+  - App.js   <-- root component
+  - index.js <-- inserts components into root in index.html
+  services
+    - apiService.js <-- hits our backend
 
 ### Backend
 controllers
