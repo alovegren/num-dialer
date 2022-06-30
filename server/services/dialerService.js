@@ -9,22 +9,19 @@ const PHONE_NUMBER = '19842068287';
 */
 
 const service = {
-  dial: (req, res) => {
+  dial: (phoneNumber) => {
     console.log('dialing!');
     console.log(`hitting API: ${DIALER_BASE_URL}/call`);
 
     axios.post(`${DIALER_BASE_URL}/call`, {
-      phone: PHONE_NUMBER,
+      phone: phoneNumber,
       webhookURL: WEBHOOK_URL,
     }).then(response => {
+      // TODO: REMOVE BELOW
       console.log(response);
       res.status(200).send();
     });
   },
-
-  updateCallStatus: ({ body }) => {
-    console.log(body);
-  }
-}
+};
 
 export default service;
