@@ -8,17 +8,16 @@ const WEBHOOK_URL = 'http://localhost:3000/callStatuses';
 */
 
 const service = {
-  dial: (phoneNumber) => {
+  dial: async (phoneNumber) => {
     console.log('dialing!');
     console.log(`hitting API: ${DIALER_BASE_URL}/call`);
 
-    axios.post(`${DIALER_BASE_URL}/call`, {
+    const response = await axios.post(`${DIALER_BASE_URL}/call`, {
       phone: phoneNumber,
       webhookURL: WEBHOOK_URL,
-    }).then(response => {
-      // console.log(response); // this is no longer middleware
-      // res.status(200).send();
     });
+
+    return response.data;
   },
 };
 

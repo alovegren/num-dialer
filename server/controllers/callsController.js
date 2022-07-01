@@ -1,14 +1,17 @@
 import dialerService from '../services/dialerService.js';
+import callData from '../data/db.js';
 
 const callsController = {
-  initCalls: (request, response) => {
-    dialerService.dial('19362072765');
+  initCalls: async (request, response) => {
+    const { id: callId } = await dialerService.dial('19362072765'); // hardcoded
+    callData.addCall(callId, '19362072765');
     response.status(200).send('Call initiated');
   },
 
   updateCallStatus: (request, response) => {
-    console.log(request.body); // update fb-not-fb
-    response.status(200).send('Call status updated');
+    const { id, status } = request.body;
+    callData.updateStatus(id, status);
+    response.status(200).send('Call status updated');    
   }
 };
 
